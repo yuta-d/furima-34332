@@ -29,7 +29,7 @@
 | item_cost_id    | integer    | null: false                   |
 | user            | references | null: false, foreign_key: true|
 | description     | text       | null: false                   |
-| price           | string     | null: false                   |
+| price           | integer    | null: false                   |
 
 ### Association
 - belongs_to :user
@@ -48,7 +48,7 @@
 - has_one :address
 - belongs_to :item
 
-## address テーブル
+## addresses テーブル
 
 | Column         | Type       | Options                       |
 | -------------- | ---------- | ----------------------------- |
