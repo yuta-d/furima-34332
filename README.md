@@ -19,17 +19,17 @@
 - has_many :purchases
 ## items テーブル
 
-| Column         | Type       | Options                       |
-| -------------- | ---------- | ----------------------------- |
-| item_name      | string     | null: false                   |
-| category       | integer    | null: false                   |
-| quality        | integer    | null: false                   |
-| delivery_cost  | integer    | null: false                   |
-| delivery_days  | integer    | null: false                   |
-| item_cost      | integer    | null: false                   |
-| user           | references | null: false, foreign_key: true|
-| description    | string     | null: false                   |
-| price          | string     | null: false                   |
+| Column          | Type       | Options                       |
+| --------------- | ---------- | ----------------------------- |
+| item_name       | string     | null: false                   |
+| category_id     | integer    | null: false                   |
+| quality_id      | integer    | null: false                   |
+| delivery_cost_id| integer    | null: false                   |
+| delivery_day_id | integer    | null: false                   |
+| item_cost_id    | integer    | null: false                   |
+| user            | references | null: false, foreign_key: true|
+| description     | text       | null: false                   |
+| price           | string     | null: false                   |
 
 ### Association
 - belongs_to :user
@@ -52,11 +52,11 @@
 
 | Column         | Type       | Options                       |
 | -------------- | ---------- | ----------------------------- |
-| postal_code    | integer    | null: false                   |
-| prefecture     | string     | null: false                   |
+| postal_code    | string     | null: false                   |
+| prefecture_id  | integer    | null: false                   |
 | city           | string     | null: false                   |
 | number         | string     | null: false                   |
-| build_name     | string     | null: false                   |
+| build_name     | string     |                               |
 | telephone      | string     | null: false                   |
 | purchase       | references | null: false, foreign_key: true|
 
