@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :item do
-    image               {Faker::Lorem.sentence}
     item_name           {"test"}
     description         {"test"}
     category_id         {2}
@@ -10,5 +9,9 @@ FactoryBot.define do
     delivaliy_day_id    {2}
     price               {"300"}
     association :user
+
+    after(:build) do |item|
+      item.image.attach(io: File.open('app/assets/images/ダウンロード.jpeg'), filename: 'ダウンロード.jpeg')
+    end
   end
 end
