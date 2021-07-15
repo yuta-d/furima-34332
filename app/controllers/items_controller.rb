@@ -26,7 +26,11 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item.update(item_params)
+    if @item.update(item_params)
+      redirect_to item_path(@item)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -46,6 +50,6 @@ class ItemsController < ApplicationController
   end
 
   def move_to_edit
-    redirect_to item_path unless current_user.id == @item.user_id
+    redirect_to item_path if current_user.id != @item.user_id || @item.purchase
   end
 end
